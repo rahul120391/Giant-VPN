@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.giantvpn" android:versionCode="1"
+
+    android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-sdk android:minSdkVersion="14"
+        android:maxSdkVersion="21"/>
+    <permission
+        android:name="de.blinkt.openvpn.REMOTE_API"
+        android:description="@string/permission_description"
+        android:label="Control OpenVPN"
+        android:permissionGroup="android.permission-group.NETWORK"
+        android:protectionLevel="dangerous" />
+
+    <application android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher"
+        android:theme="@style/AppTheme1"
+        android:name="de.blinkt.openvpn.core.ICSOpenVPNApplication"
+        android:supportsRtl="true"
+        tools:ignore="UnusedAttribute"
+        >
+
+        <supports-screens
+            android:smallScreens="true"
+            android:normalScreens="true"
+            android:largeScreens="true"
+            android:anyDensity="true"
+            />
+
+
+
+        <activity android:name="com.giantvpn.PageViewActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".login"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"/>
+        <activity android:name=".afterlogin"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"/>
+        <activity android:name=".login_a"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"/>
+        <activity android:name=".settings"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"/>
+        <activity android:name=".web_view"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"/>
+
+        <activity
+            android:name="de.blinkt.openvpn.activities.LogWindow"
+            android:allowTaskReparenting="true"
+            android:screenOrientation="portrait"
+            android:label="@string/openvpn_log"
+            android:launchMode="singleTask" />
+
+        <service
+            android:name="de.blinkt.openvpn.core.OpenVPNService"
+            android:permission="android.permission.BIND_VPN_SERVICE"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="de.blinkt.openvpn.api.ExternalOpenVPNService"
+            android:permission="de.blinkt.openvpn.REMOTE_API"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="de.blinkt.openvpn.api.IOpenVPNAPIService" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:permission="de.blinkt.openvpn.REMOTE_API"
+            android:screenOrientation="portrait"
+            android:name="de.blinkt.openvpn.api.GrantPermissionsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:permission="de.blinkt.openvpn.REMOTE_API"
+            android:screenOrientation="portrait"
+            android:name="de.blinkt.openvpn.api.ConfirmDialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="de.blinkt.openvpn.OnBootReceiver">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+
+
+        <activity
+            android:name="de.blinkt.openvpn.LaunchCVPN"
+            android:label="@string/vpn_launch_title"
+            android:screenOrientation="portrait"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Panel"
+            tools:ignore="ExportedActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="de.blinkt.openvpn.FileProvider"
+            android:authorities="de.blinkt.openvpn.FileProvider"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            tools:ignore="ExportedContentProvider" />
+
+
+
+
+    </application>
+</manifest>

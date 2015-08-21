@@ -1,0 +1,50 @@
+<resources>
+
+    <string name="is_rtl">true</string>
+    <string name="app_name">הענק VPN</string>
+    <string name="menu_settings">הגדרות</string>
+    <string name="title_activity_page_view">VPN</string>
+    <string name="t1">לעשות חשבון בפחות מעשר שניות</string>
+    <string name="connect">חבר</string>
+    <string name="disconnect">מנותק</string>
+    <string name="VPNname">הרקטה VPN</string>
+    <string name="location">מיקום</string>
+    <string name="adblocker">חוסם מודעות</string>
+    <string name="alwayscnct">מחובר תמיד</string>
+    <string name="acc">חשבון</string>
+    <string name="time">זמן שנותר</string>
+    <string name="pacc">חשבון פרימיום</string>
+    <string name="gun">6 אקדח</string>
+    <string name="set">הגדרות</string>
+    <string name="signin">הירשם</string>
+    <string name="signup">להירשם</string>
+    <string name="email">כתובת דוא"ל</string>
+    <string name="pass">סיסמא</string>
+    <string name="blues">פתח את כל אתרים החסומים.</string>
+
+    <string name="unlock">  לפתוח כל אתר אינטרנט כולל YouTube, נטפליקס, פייסבוק ואחרים
+              </string>
+
+
+
+    <string name="hide">  להסתיר את הפעילות שלך באינטרנט ו\ n
+          להגן על הזהות הדיגיטלית שלך בזמן \ n
+          גלישה.   </string>
+
+
+    <string name="encrypt">       להצפין המידע הפרטי שלך לפני \ n
+        לשלוח אותו ברשת.                  </string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    <string name="login">התחברתי</string>
+    <string name="termsofservice">תנאי שימוש</string>
+    <string name="contactsupport">צור קשר עם תמיכה</string>
+    <string name="reinstall">התקן מחדש את הגדרות VPN</string>
+    <string name="restore">שחזור רכישה קודמת</string>
+    <string name="logout">להתנתק</string>
+    <string name="webv">צפה באינטרנט</string>
+
+
+
+
+</resources>
